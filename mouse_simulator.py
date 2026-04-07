@@ -232,11 +232,10 @@ class MouseClickSimulatorGUI:
             ov.attributes('-alpha', 0.3)
             ov.config(bg='gray')
             ov.geometry(f"{mw}x{mh}+{mx}+{my}")
-            if idx == 0:
-                tk.Label(
-                    ov, text="請點選目標點（按 Esc 取消）",
-                    font=("Arial", 24), bg="gray", fg="white"
-                ).place(relx=0.5, rely=0.5, anchor="center")
+            tk.Label(
+                ov, text="請點選目標點（按 Esc 取消）",
+                font=("Arial", 24), bg="gray", fg="white"
+            ).place(relx=0.5, rely=0.5, anchor="center")
             ov.bind("<Button-1>", lambda e, ovs=overlays: self._on_overlay_click(e, ovs))
             ov.bind("<Escape>",   lambda e, ovs=overlays: self._close_overlays(ovs))
             overlays.append(ov)
