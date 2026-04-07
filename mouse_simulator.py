@@ -198,6 +198,7 @@ class MouseClickSimulatorGUI:
         self._drag_last_target = target
 
     def _drag_release(self, event):
+        self.tree.selection_remove(self.tree.selection())
         self._drag_item        = None
         self._drag_last_target = None
 
